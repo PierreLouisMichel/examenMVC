@@ -1,0 +1,42 @@
+1.
+SELECT count(id_conducteur)
+FROM conducteur;
+
+2.
+SELECT count(id_vehicule)
+FROM vehicule;
+
+3.
+SELECT count(id_association)
+FROM association;
+
+4.
+SELECT *
+FROM vehicule
+WHERE id_vehicule 
+NOT IN (SELECT id_vehicule FROM association);
+
+5.
+SELECT *
+FROM conducteur
+WHERE id_conducteur 
+NOT IN (SELECT id_conducteur FROM association);
+
+6.
+SELECT *
+FROM vehicule
+INNER JOIN association
+WHERE vehicule.id_vehicule = association.id_vehicule
+AND association.id_conducteur = (
+                                    SELECT id_conducteur 
+                                    FROM conducteur
+                                    WHERE nom = 'Pandre'
+                                    AND prenom = 'Phillipe'
+                                )
+
+7.
+
+8.
+
+9.
+SELECT * FROM conducteur, vehicule;

@@ -8,14 +8,6 @@ class VehiculesController
         view('vehicules.affichage_vehicules', compact('vehicules'));
     }
 
-    public function show($id)
-    {
-        $vehicule = Vehicule::findOne($id);
-        $vues = Vehicule::vehicule_vue($id);
-
-        view('vehicules.affichage_vehicule', compact('vehicule', 'vues'));
-    }
-
     public function add_vehicule()
     {
         view('vehicules.add_vehicule');
@@ -23,7 +15,6 @@ class VehiculesController
 
     public function save()
     {
-        //A faire lorsque les POST soient complets. Entre les guimets du $_POST va nom du champ dans le formulaire
 
         if (!empty($_POST)) {
 
@@ -39,10 +30,6 @@ class VehiculesController
             $vehicules = Vehicule::findAll();
             view('vehicules.affichage_vehicules', compact('vehicules'));
         }
-        else
-        {
-            echo "NN";
-        }
 
     }
 
@@ -50,9 +37,7 @@ class VehiculesController
     public function edit($id)
     {
         $vehicule = Vehicule::findOne($id);
-        $types = Type::findAll();
-
-        view('vehicules.edit', compact('vehicule', 'types'));
+        view('vehicules.edit', compact('vehicule'));
     }
 
     public function update($id)

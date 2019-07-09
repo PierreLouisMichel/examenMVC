@@ -9,19 +9,6 @@ class ConducteursController
         view('conducteurs.affichage_conducteurs', compact('conducteurs')); 
     }
 
-    public function show($id)
-    {
-        $conducteur = Conducteur::findOne($id);
-        $vehicules = Conducteur::conducteur_vue($id);
-        view('conducteurs.affichage_conducteur', compact('conducteur', 'vehicules'));
-    }
-    /*
-    public function conducteur_vu()
-    {
-        $Films = User:: conducteur_vue();
-        view('conducteurs.affichage_conducteur', compact('films'));
-    }
-*/
     public function add_conducteur()
     {
         view('conducteurs.add_conducteur');
@@ -33,17 +20,12 @@ class ConducteursController
         if (!empty($_POST)) {
             $conducteur = new Conducteur;
 
-            $conducteur->setName($_POST['name']);
-            $conducteur->setPassword($_POST['password']);
-            $conducteur->setEmail($_POST['email']);
-            if (isset($_POST['avatar'])) {
-                $conducteur->setAvatar($_POST['avatar']);
-            }
-
+            $conducteur->setNom($_POST['nom']);
+            $conducteur->setPrenom($_POST['prenom']);
             $conducteur->save();
         }
 
-        view('pages.add_conducteur');
+        view('conducteurs.add_conducteur');
     }
 
     public function edit($id)
@@ -55,10 +37,9 @@ class ConducteursController
 
     public function update($id)
     {
-        $conducteur = User::findOne($id); /* User en vert correspond à User du fichier 'User'.php*/
-        $conducteur->setName($_POST['name']);
-        $conducteur->setEmail($_POST['email']);
-        $conducteur->setPassword($_POST['password']);
+        $conducteur = Conducteur::findOne($id); /* User en vert correspond à User du fichier 'User'.php*/
+        $conducteur->setNom($_POST['nom']);
+        $conducteur->setPrenom($_POST['prenom']);
         $conducteur->update();
 
         redirectTo('/affichage_conducteur/' . $id);

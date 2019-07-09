@@ -51,7 +51,6 @@ class Conducteur extends Db
     public function save()
     {
         $data = [
-            'id_conducteur'     => $this->id_conducteur,
             'nom'      => $this->nom,
             'prenom'  => $this->prenom,
         ];

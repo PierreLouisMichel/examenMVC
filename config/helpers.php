@@ -22,6 +22,15 @@ function url_delete_vehicule($id)
     return BASE_URL . '/affichage_vehicule/' . $id . '/delete';
 }
 
+function url_edit_conducteur($id)
+{
+    return BASE_URL . '/affichage_conducteur/' . $id . '/edit';
+}
+function url_delete_conducteur($id)
+{
+    return BASE_URL . '/affichage_conducteur/' . $id . '/delete';
+}
+
 function uploads_url($img) {
     return BASE_URL . '/public/uploads/' . $img;
 }

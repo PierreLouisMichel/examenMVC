@@ -21,8 +21,8 @@
                 <td class="align-middle"><?= $vehicule['modele'] ?></td>
                 <td class="align-middle"><?= $vehicule['color'] ?></td>
                 <td class="align-middle"><?= $vehicule['immatriculation'] ?></td>
-                <td class="align-middle"><a href="<?= url_edit_vehicule($vehicule['id_vehicule']) ?>"><i class="vehicule-icon fas fa-pen-square"></i></a></td>
-                <td class="align-middle"><a href="<?= url_delete_vehicule($vehicule['id_vehicule']) ?>"><i class="vehicule-icon fas fa-trash-alt"></i></a></td>
+                <td class="align-middle"><a href="<?= url_edit_vehicule($vehicule['id_vehicule']) ?>"><i class="film-icon fas fa-pen-square"></i>lien</a></td>
+                <td class="align-middle"><a href="<?= url_delete_vehicule($vehicule['id_vehicule']) ?>"><i class="film-icon fas fa-trash-alt"></i>lien</a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

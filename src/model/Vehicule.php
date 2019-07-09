@@ -34,6 +34,20 @@ class Vehicule extends Db
         return $this;
     }
 
+    public function setColor($color)
+    {
+        // Il faudra faire de validations
+        $this->color = $color;
+        return $this;
+    }
+
+    public function setImmatriculation($immatriculation)
+    {
+        // Il faudra faire de validations
+        $this->immatriculation = $immatriculation;
+        return $this;
+    }
+
     /* Getters */
     public function getId_vehicule()
     {
@@ -104,13 +118,13 @@ class Vehicule extends Db
     public static function findOne(int $id_vehicule)
     {
         $request = [
-            ['id', '=', $id_vehicule]
+            ['id_vehicule', '=', $id_vehicule]
         ];
         $element = Db::dbFind(self::TABLE_NAME, $request);
         if (count($element) > 0) $element = $element[0];
         else return;
 
-        $vehicule = new User; //permet de créer un nouvel objet 
+        $vehicule = new Vehicule; //permet de créer un nouvel objet 
         $vehicule->setId_vehicule($element['id_vehicule']);
         $vehicule->setMarque($element['marque']);
         $vehicule->setModele($element['modele']);

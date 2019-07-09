@@ -7,11 +7,10 @@
     primun daemon seclesus est.
     Cum potensia primum daemon fundet mortem in terram, deinde moritur.
 </p>
+
 <a href="<?= url('add_conducteur') ?>">add_conducteur</a><br>
 <a href="<?= url('add_vehicule') ?>">add_vehicule</a><br>
-<a href="<?= url('add_conducteur') ?>">add_conducteur</a><br>
-<a href="<?= url('add_vehicule') ?>">add_vehicule</a><br>
-<a href="<?= url('affichage_conducteurs') ?>">affichage_conducteurs</a><br>
+<a href="<?= url('affichage_conducteur') ?>">affichage_conducteurs</a><br>
 <a href="<?= url('affichage_vehicules') ?>">affichage_vehicules</a><br>
 <a href="<?= url('types') ?>">Les Types</a><br>
 
