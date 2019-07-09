@@ -7,6 +7,20 @@ function redirectTo($route) {
 function url($route) {
     return BASE_URL . '/'. $route;
 }
+/*
+function url_vehicule($id)
+{
+    return BASE_URL . '/affichage_vehicule/' . $id;
+}
+*/
+function url_edit_vehicule($id)
+{
+    return BASE_URL . '/affichage_vehicule/' . $id . '/edit';
+}
+function url_delete_vehicule($id)
+{
+    return BASE_URL . '/affichage_vehicule/' . $id . '/delete';
+}
 
 function uploads_url($img) {
     return BASE_URL . '/public/uploads/' . $img;
